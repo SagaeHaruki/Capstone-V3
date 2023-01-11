@@ -1,3 +1,5 @@
+import java.security.AllPermission;
+
 public class PsPHandler {
    /* This Class is used for Handling the Setters and Getters */
 
@@ -12,6 +14,7 @@ public class PsPHandler {
    private String ppAddress; // Address
    private String ppEmail; // Email
    private String ppMonbileNO; // Mobile Number
+   private String ppAlcode; // Allias Code
 
    /* Setters and Getters */
    /* Last Name */
@@ -102,5 +105,14 @@ public class PsPHandler {
 
    public void setContN(String ContactN) {
       this.ppMonbileNO = ContactN;
+   }
+
+   /* Allias Code */
+   public String getAlcode() {
+      return ppAlcode;
+   }
+
+   public void setAlcode(String Alcode) {
+      this.ppAlcode = Alcode;
    }
 }

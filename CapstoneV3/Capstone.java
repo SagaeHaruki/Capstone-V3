@@ -43,6 +43,8 @@ public class Capstone {
 
             System.out.print(
                   "---------------------------------------------------------------------------------------------------------------------------\n\n");
+            SearchList_Ext SL_Ext = new SearchList_Ext();
+            SL_Ext.Run_Choices();
 
          } else if (S_Inpt.equalsIgnoreCase("Stop")) {
 

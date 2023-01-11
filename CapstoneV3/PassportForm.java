@@ -6,7 +6,7 @@ import static java.nio.file.StandardOpenOption.*;
 class PassportForm extends PsPHandler {
 
    Scanner Scanner1 = new Scanner(System.in);
-   String PassPortData = "D:\\Coding\\Codes 2\\CapstoneV3\\dataPassport.txt";
+   String PassPortData = "dataPassport.txt";
 
    /* This is The First Action */
 
@@ -94,17 +94,20 @@ class PassportForm extends PsPHandler {
          switch (emailCopy + " - " + contCopy) {
             /* First Case if Email is already Existing */
             case "true - false":
-
+               ExistingEm ex = new ExistingEm();
+               ex.Send();
                ppInput();
                break;
             /* Second Case if Contact Number is already Existing */
             case "false - true":
-
+               ExistingCont exx = new ExistingCont();
+               exx.Send();
                ppInput();
                break;
             /* Third Case if both already existing */
             case "true - true":
-
+               Existingboth exxx = new Existingboth();
+               exxx.Send();
                ppInput();
                break;
             default:
@@ -141,27 +144,22 @@ class PassportForm extends PsPHandler {
          System.out.print("\t\t\t\t\t\tAccout Information");
          System.out.print(
                "\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
-         System.out.print(
-               "      Last Name \tFirst Name \t\tMiddle Initial \t\tGender \t\t\t   Civil Status\n");
          System.out
-               .print("      " + getLastName() + "\t\t" + getFirstname() + "\t\t      " + getMidName() + "\t\t\t"
-                     + getGender() + "\t\t\t      "
-                     + getCivilStat()
-                     + "\n\n");
-
-         System.out.print(
-               "      Address \t\tDate of Birth \t\tPlace of birth \t\tEmail Address \t\t   Contact Number\n");
-         System.out
-               .print("      " + getAddress() + "\t\t" + getDoB() + "\t\t    " + getPoB() + "\t\t" + getEmail()
-                     + "\t\t" + getContN()
-                     + "");
+               .print("\t\tLast Name: " + getLastName() + "\t\tFirst Name: " + getFirstname() + "\t\tMiddle Initial: "
+                     + getMidName() + "\n\n");
+         System.out.print("\t\tPlace of Birth: " + getPoB() + "\t\tDate of Birth: " + getDoB() + "\t\tGender: "
+               + getGender() + "Current City Living: " + getAddress() + "\n\n");
+         System.out.print("\t\tCivil Status: " + getCivilStat() + "\t\tEmail Address: " + getEmail()
+               + "\t\tContact Number: " + getContN() + "\n\n");
          System.out.print(
                "\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
          System.out.print("\t\t\t\t\tPlease check the fillup form to confirm\n\n");
          System.out.print(
-               "\t\t\t Confirm: \tConfirm the Form, No Errors found \t[Type: \" Conirm \"] \n\n");
+               "\t\t\t Confirm: \tConfirm the Form, No Errors found \t[Type: \" Confirm \"] \n\n");
          System.out.print(
                "\t\t\t Reset: \tReset the Form \t[Type: \" Reset \"] \n\n");
+         System.out.print(
+               "\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
          ConfirmationExt();
       } catch (Exception exeException) {
          throw new exeException();
@@ -220,20 +218,14 @@ class PassportForm extends PsPHandler {
             System.out.print("\t\t\t\t\t\tAccount Registered");
             System.out.print(
                   "\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
-            System.out.print(
-                  "      Last Name \tFirst Name \t\tMiddle Initial \t\tGender \t\t\t   Civil Status\n");
             System.out
-                  .print("      " + getLastName() + "\t\t" + getFirstname() + "\t\t      " + getMidName() + "\t\t\t"
-                        + getGender() + "\t\t\t      "
-                        + getCivilStat()
-                        + "\n\n");
-
-            System.out.print(
-                  "      Address \t\tDate of Birth \t\tPlace of birth \t\tEmail Address \t\t   Contact Number\n");
-            System.out
-                  .print("      " + getAddress() + "\t\t" + getDoB() + "\t\t    " + getPoB() + "\t\t" + getEmail()
-                        + "\t\t" + getContN()
-                        + "");
+                  .print(
+                        "\t\tLast Name: " + getLastName() + "\t\tFirst Name: " + getFirstname() + "\t\tMiddle Initial: "
+                              + getMidName() + "\n\n");
+            System.out.print("\t\tPlace of Birth: " + getPoB() + "\t\tDate of Birth: " + getDoB() + "\t\tGender: "
+                  + getGender() + "Current City Living: " + getAddress() + "\n\n");
+            System.out.print("\t\tCivil Status: " + getCivilStat() + "\t\tEmail Address: " + getEmail()
+                  + "\t\tContact Number: " + getContN() + "\n\n");
             System.out.print(
                   "\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
             System.out.print(

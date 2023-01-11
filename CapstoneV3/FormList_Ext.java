@@ -1,183 +1,190 @@
 import java.util.*;
 
 public class FormList_Ext extends Form_List {
-   Scanner Scan = new Scanner(System.in);
+	Scanner Scan = new Scanner(System.in);
 
-   /*
-    * ------------------------------- FORM CHOICES -------------------------------
-    */
+	/*
+	 * ------------------------------- FORM CHOICES -------------------------------
+	 */
 
-   void Run_Choices() {
-      System.out.print("\t\t\t\t\tChoose Between Visa or Passport: ");
-      String c_Input = Scan.nextLine();
-      if (c_Input.equalsIgnoreCase("Visa")) {
-         System.out.print(
-               "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+	void Run_Choices() {
+		System.out.print("\t\t\t\t\tChoose Between Visa or Passport: ");
+		String c_Input = Scan.nextLine();
+		if (c_Input.equalsIgnoreCase("Visa")) {
+			System.out.print(
+					"\n---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-         System.out.print("\t\t\t\t\t     You are now using Forms for Visa");
-         Form_Visa();
-      } else if (c_Input.equalsIgnoreCase("Passport")) {
-         System.out.print(
-               "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+			System.out.print("\t\t\t\t\t     You are now using Forms for Visa");
+			Form_Visa();
+		} else if (c_Input.equalsIgnoreCase("Passport")) {
+			System.out.print(
+					"\n---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-         System.out.print("\t\t\t\t\t     You are now using Forms for Passport");
-         Form_Passport();
-      } else {
-         System.out.print(
-               "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
-         System.out.print("\t\t\t\t\t\tPlease Try Again!\n\n");
-         Run_Choices();
-      }
+			System.out.print("\t\t\t\t\t     You are now using Forms for Passport");
+			Form_Passport();
+		} else {
+			System.out.print(
+					"\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+			System.out.print("\t\t\t\t\t\tPlease Try Again!\n\n");
+			Run_Choices();
+		}
 
-   }
+	}
 
-   /*
-    * ------------------------------- PASSPORT FORM CHOICES
-    * -------------------------------
-    */
-   void Form_Passport() {
-      try {
+	/*
+	 * ------------------------------- PASSPORT FORM CHOICES
+	 * -------------------------------
+	 */
+	void Form_Passport() {
+		try {
 
-         System.out.print(
-               "\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
-         System.out.print(
-               "\t\t\t Register: \tOpen a Register Form for a Passport Account \t[Type: \" Register \"] \n\n");
-         System.out.print(
-               "\t\t\t Login: \tLogin to check your full account details \t[Type: \" Login \"] \n\n");
-         System.out.print(
-               "\t\t\t Switch: \tSwitch to a Different Registration Form \t[Type: \" Visa \"] \n\n");
-         System.out.print("\t\t\t Had Enough? \tTo end the Program \t\t\t\t[Type: \" Stop \"] \n\n");
-         System.out.print(
-               "---------------------------------------------------------------------------------------------------------------------------\n\n");
+			System.out.print(
+					"\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+			System.out.print(
+					"\t\t\t Register: \tOpen a Register Form for a Passport Account \t[Type: \" Register \"] \n\n");
+			System.out.print(
+					"\t\t\t Switch: \tSwitch to a Different Registration Form \t[Type: \" Visa \"] \n\n");
+			System.out.print("\t\t\t Had Enough? \tTo end the Program \t\t\t\t[Type: \" Stop \"] \n\n");
+			System.out.print("\t\t\t Go Back?    \tTo go back use     \t\t\t\t[Type: \" Back \"] \n\n");
+			System.out.print(
+					"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-         System.out.print("\t\t\t\t\t\tEnter Action Here: ");
-         String inpt = Scan.nextLine();
+			System.out.print("\t\t\t\t\t\t Enter Action Here: ");
+			String inpt = Scan.nextLine();
 
-         System.out.print("\n");
-         if (inpt.equalsIgnoreCase("Register")) {
+			System.out.print("\n");
+			if (inpt.equalsIgnoreCase("Register")) {
 
-            /* Passport Registration Form */
+				/* Passport Registration Form */
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            System.out.print("\t\t\t\t\t\tProceeding to Registration");
-            PassportForm ppF = new PassportForm();
-            ppF.first();
+				System.out.print("\t\t\t\t\t\tProceeding to Registration");
+				PassportForm ppF = new PassportForm();
+				ppF.first();
 
-         } else if (inpt.equalsIgnoreCase("Login")) {
+			} else if (inpt.equalsIgnoreCase("Visa")) {
 
-            /* Passport Login Site */
+				/* Switch to Visa Form */
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            System.out.print("\t\t\t\t\t\tProceeding to Login Site");
+				System.out.print("\t\t\t\t\t\tSwitching to Visa Form");
+				Form_Visa();
 
-         } else if (inpt.equalsIgnoreCase("Visa")) {
+			} else if (inpt.equalsIgnoreCase("Stop")) {
 
-            /* Switch to Visa Form */
+				/* Stop the Program */
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print("\t\t\t\t\t    Thank You for using our program!\n\n");
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            System.out.print("\t\t\t\t\t\tSwitching to Visa Form");
-            Form_Visa();
+			} else if (inpt.equalsIgnoreCase("Back")) {
 
-         } else if (inpt.equalsIgnoreCase("Stop")) {
+				/* Stop the Program */
 
-            /* Stop the Program */
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print("\t\t\t\t\t\tGoing Back to previous GUI!\n\n");
+				new Capstone();
+			} else {
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
-            System.out.print("\t\t\t\t\t    Thank You for using our program!\n\n");
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print("\t\t\t\tCannot Proceed to " + inpt + ", Not in the choices above.\n\n");
+				System.out.print("\t\t\t\t\t\tPlease Try Again!");
+				Form_Passport();
+			}
+		} catch (Exception exeException) {
+			new exeException();
+		}
+	}
 
-         } else {
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+	/*
+	 * ------------------------------- VISA FORM CHOICES
+	 * -------------------------------
+	 */
 
-            System.out.print("\t\t\t\tCannot Proceed to " + inpt + ", Not in the choices above.\n\n");
-            System.out.print("\t\t\t\t\t\tPlease Try Again!");
-            Form_Passport();
-         }
-      } catch (Exception exeException) {
-         new exeException();
-      }
-   }
+	void Form_Visa() {
+		try {
+			System.out.print(
+					"\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+			System.out.print(
+					"\t\t\t Register: \tOpen a Register Form for a Visa Account \t[Type: \" Register \"] \n\n");
+			System.out.print(
+					"\t\t\t Login: \tLogin to check your full account details \t[Type: \" Login \"] \n\n");
+			System.out.print(
+					"\t\t\t Switch: \tSwitch to a Different Registration Form \t[Type: \" Passport \"] \n\n");
+			System.out.print("\t\t\t Had Enough? \tTo end the Program \t\t\t\t[Type: \" Stop \"] \n\n");
+			System.out.print("\t\t\t Go Back?    \tTo go back use     \t\t\t\t[Type: \" Back \"] \n\n");
+			System.out.print(
+					"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-   /*
-    * ------------------------------- VISA FORM CHOICES
-    * -------------------------------
-    */
+			System.out.print("\t\t\t\t\t\t Enter Action Here: ");
+			String inpt = Scan.nextLine();
 
-   void Form_Visa() {
-      try {
-         System.out.print(
-               "\n\n---------------------------------------------------------------------------------------------------------------------------\n\n");
-         System.out.print(
-               "\t\t\t Register: \tOpen a Register Form for a Visa Account \t[Type: \" Register \"] \n\n");
-         System.out.print(
-               "\t\t\t Login: \tLogin to check your full account details \t[Type: \" Login \"] \n\n");
-         System.out.print(
-               "\t\t\t Switch: \tSwitch to a Different Registration Form \t[Type: \" Passport \"] \n\n");
-         System.out.print("\t\t\t Had Enough? \tTo end the Program \t\t\t\t[Type: \" Stop \"] \n\n");
-         System.out.print(
-               "---------------------------------------------------------------------------------------------------------------------------\n\n");
+			System.out.print("\n");
+			if (inpt.equalsIgnoreCase("Register")) {
 
-         System.out.print("\t\t\t\t\t\tEnter Action Here: ");
-         String inpt = Scan.nextLine();
+				/* Visa Registration Form */
 
-         System.out.print("\n");
-         if (inpt.equalsIgnoreCase("Register")) {
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            /* Visa Registration Form */
+				System.out.print("\t\t\t\t\t\t Proceeding to Registration");
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+			} else if (inpt.equalsIgnoreCase("Login")) {
 
-            System.out.print("\t\t\t\t\t\t Proceeding to Registration");
+				/* Visa Login Site */
 
-         } else if (inpt.equalsIgnoreCase("Login")) {
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            /* Visa Login Site */
+				System.out.print("\t\t\t\t\t\tProceeding to Login Site");
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+			} else if (inpt.equalsIgnoreCase("Passport")) {
 
-            System.out.print("\t\t\t\t\t\tProceeding to Login Site");
+				/* Switch to Passport Form */
 
-         } else if (inpt.equalsIgnoreCase("Passport")) {
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            /* Switch to Passport Form */
+				System.out.print("\t\t\t\t\t\tSwitching to Passport Form");
+				Form_Passport();
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+			} else if (inpt.equalsIgnoreCase("Stop")) {
 
-            System.out.print("\t\t\t\t\t\tSwitching to Passport Form");
-            Form_Passport();
+				/* Stop the Program */
 
-         } else if (inpt.equalsIgnoreCase("Stop")) {
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print("\t\t\t\t\t    Thank You for using our program!\n\n");
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            /* Stop the Program */
+			} else if (inpt.equalsIgnoreCase("Back")) {
 
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
-            System.out.print("\t\t\t\t\t    Thank You for using our program!\n\n");
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
+				/* Stop the Program */
 
-         } else {
-            System.out.print(
-                  "---------------------------------------------------------------------------------------------------------------------------\n\n");
-            System.out.print("\t\t\t\tCannot Proceed to " + inpt + ", Not in the choices above.\n\n");
-            System.out.print("\t\t\t\t\t\tPlease Try Again!");
-            Form_Visa();
-         }
-      } catch (Exception exeException) {
-         new exeException();
-      }
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print("\t\t\t\t\t\tGoing Back to previous GUI!\n\n");
+				new Capstone();
+			} else {
+				System.out.print(
+						"---------------------------------------------------------------------------------------------------------------------------\n\n");
+				System.out.print("\t\t\t\tCannot Proceed to " + inpt + ", Not in the choices above.\n\n");
+				System.out.print("\t\t\t\t\t\tPlease Try Again!");
+				Form_Visa();
+			}
+		} catch (Exception exeException) {
+			new exeException();
+		}
 
-   }
+	}
 }
