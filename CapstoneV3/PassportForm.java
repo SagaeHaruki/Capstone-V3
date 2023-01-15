@@ -191,9 +191,7 @@ class PassportForm extends PsPHandler {
          int max = 9999;
          int ver = RNG.nextInt(max - min) + min;
 
-         System.out.print("Verification Code: " + ver);
-
-         System.out.print("\n>> ");
+         System.out.print("\t\t\t\t\t\tVerification Code: " + ver + "\n\t\t\t\t\t\t>> ");
          int inptVer = Scanner1.nextInt();
 
          /* If Verification is Confirmed */
@@ -241,6 +239,7 @@ class PassportForm extends PsPHandler {
          }
 
          if (inptVer != ver) {
+            System.out.print("\t\t\t\t\tInvalid Verification Code!\n");
             Verify();
          }
 

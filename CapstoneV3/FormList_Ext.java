@@ -117,8 +117,6 @@ public class FormList_Ext extends Form_List {
 			System.out.print(
 					"\t\t\t Register: \tOpen a Register Form for a Visa Account \t[Type: \" Register \"] \n\n");
 			System.out.print(
-					"\t\t\t Login: \tLogin to check your full account details \t[Type: \" Login \"] \n\n");
-			System.out.print(
 					"\t\t\t Switch: \tSwitch to a Different Registration Form \t[Type: \" Passport \"] \n\n");
 			System.out.print("\t\t\t Had Enough? \tTo end the Program \t\t\t\t[Type: \" Stop \"] \n\n");
 			System.out.print("\t\t\t Go Back?    \tTo go back use     \t\t\t\t[Type: \" Back \"] \n\n");
@@ -137,15 +135,8 @@ public class FormList_Ext extends Form_List {
 						"---------------------------------------------------------------------------------------------------------------------------\n\n");
 
 				System.out.print("\t\t\t\t\t\t Proceeding to Registration");
-
-			} else if (inpt.equalsIgnoreCase("Login")) {
-
-				/* Visa Login Site */
-
-				System.out.print(
-						"---------------------------------------------------------------------------------------------------------------------------\n\n");
-
-				System.out.print("\t\t\t\t\t\tProceeding to Login Site");
+				VisaForm V_Form = new VisaForm();
+				V_Form.first();
 
 			} else if (inpt.equalsIgnoreCase("Passport")) {
 

@@ -11,6 +11,7 @@ public class SearchList_Ext extends Search_List {
     */
    void Run_Choices() {
       try {
+         System.out.print("\t\t\t\t You may type [Back] to return to previous GUI!\n");
          System.out.print("\t\t\t\t\tChoose Between Visa or Passport: ");
          String c_Input = Scan.nextLine();
          if (c_Input.equalsIgnoreCase("Visa")) {
@@ -23,13 +24,13 @@ public class SearchList_Ext extends Search_List {
             System.out.print(
                   "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            System.out.print("\t\t\t\t\t     You are now Seaching in Passport Forms");
+            System.out.print("\t\t\t\t\t   You are now Seaching in Passport Forms");
             Search_Passport();
          } else if (c_Input.equalsIgnoreCase("Back")) {
             System.out.print(
                   "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
 
-            System.out.print("\t\t\t\t\t     Going Back to previous GUI");
+            System.out.print("\t\t\t\t\t     Going Back to previous GUI\n");
             new Capstone();
          } else {
             System.out.print(
@@ -54,20 +55,22 @@ public class SearchList_Ext extends Search_List {
 
          Scanner Sc = new Scanner(new File("dataPassport.txt"));
          Sc.useDelimiter("\r?\n");
+         System.out.print(
+               "\n\n---------------------------------------------------------------------------------------------------------------------------\n");
 
-         System.out.print("\nSearch for: ");
+         System.out.print("\n\t\t\t\t\t   Search for: ");
          String inpt3 = Scan.nextLine();
 
          while (Sc.hasNext()) {
             list.add(Sc.next());
          }
-
+         System.out.print(
+               "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+         System.out.print("\t\t\t\t\tList of items that contains \"" + inpt3 + "\"\n");
          boolean found = false;
 
          for (String element : list) {
             if (element.contains(inpt3)) {
-               System.out.print("\n-------------------------------\n");
-               System.out.print("List of items that contains \"" + inpt3 + "\"\n");
                found = true;
                String[] list3 = element.split(",");
                LastN = list3[0];
@@ -75,13 +78,16 @@ public class SearchList_Ext extends Search_List {
                MidlN = list3[2];
                EmailAdd = list3[8];
 
-               System.out.print("-------------------------------\n");
-               System.out.print("Showing only the public details\n");
-               System.out.print("Last Name:      " + LastN + "\n");
-               System.out.print("First Name:     " + FrstN + "\n");
-               System.out.print("Middle Name:    " + MidlN + "\n");
-               System.out.print("Email Address:  " + EmailAdd + "\n");
-               System.out.print("-------------------------------\n");
+               System.out.print(
+                     "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+
+               System.out.print("\t\t\t\t\tShowing only the public details\n\n");
+               System.out.print("\t\t\t\t\tLast Name:      " + LastN + "\n");
+               System.out.print("\t\t\t\t\tFirst Name:     " + FrstN + "\n");
+               System.out.print("\t\t\t\t\tMiddle Name:    " + MidlN + "\n");
+               System.out.print("\t\t\t\t\tEmail Address:  " + EmailAdd + "\n");
+               System.out.print(
+                     "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
 
             } else {
                found = false;
@@ -91,8 +97,8 @@ public class SearchList_Ext extends Search_List {
             Run_Choices();
          }
          if (found == false) {
-            System.out.print("Cannot find " + inpt3);
-            System.out.print("\nPlease try again!\n");
+            System.out.print("\t\t\t\t\t\tCannot find " + inpt3);
+            System.out.print("\n\t\t\t\t\t\tPlease try again!\n");
             Search_Passport();
          }
       } catch (Exception exeException) {
@@ -109,37 +115,44 @@ public class SearchList_Ext extends Search_List {
       ArrayList<String> list = new ArrayList<String>();
       try {
          String LastN, FrstN, MidlN, EmailAdd;
+         System.out.print(
+               "\n\n---------------------------------------------------------------------------------------------------------------------------\n");
 
          Scanner Sc = new Scanner(new File("dataVisa.txt"));
          Sc.useDelimiter("\r?\n");
 
-         System.out.print("\nSearch for: ");
+         System.out.print("\n\t\t\t\t\t   Search for: ");
          String inpt3 = Scan.nextLine();
 
          while (Sc.hasNext()) {
             list.add(Sc.next());
          }
 
+         System.out.print(
+               "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+         System.out.print("\t\t\t\t\tList of items that contains \"" + inpt3 + "\"\n");
+
          boolean found = false;
 
          for (String element : list) {
             if (element.contains(inpt3)) {
-               System.out.print("\n-------------------------------\n");
-               System.out.print("List of items that contains \"" + inpt3 + "\"\n");
                found = true;
                String[] list3 = element.split(",");
                LastN = list3[0];
                FrstN = list3[1];
                MidlN = list3[2];
-               EmailAdd = list3[8];
+               EmailAdd = list3[12];
 
-               System.out.print("-------------------------------\n");
-               System.out.print("Showing only the public details\n");
-               System.out.print("Last Name:      " + LastN + "\n");
-               System.out.print("First Name:     " + FrstN + "\n");
-               System.out.print("Middle Name:    " + MidlN + "\n");
-               System.out.print("Email Address:  " + EmailAdd + "\n");
-               System.out.print("-------------------------------\n");
+               System.out.print(
+                     "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
+
+               System.out.print("\t\t\t\t\tShowing only the public details\n\n");
+               System.out.print("\t\t\t\t\tLast Name:      " + LastN + "\n");
+               System.out.print("\t\t\t\t\tFirst Name:     " + FrstN + "\n");
+               System.out.print("\t\t\t\t\tMiddle Name:    " + MidlN + "\n");
+               System.out.print("\t\t\t\t\tEmail Address:  " + EmailAdd + "\n");
+               System.out.print(
+                     "\n---------------------------------------------------------------------------------------------------------------------------\n\n");
 
             } else {
                found = false;
@@ -149,8 +162,8 @@ public class SearchList_Ext extends Search_List {
             Run_Choices();
          }
          if (found == false) {
-            System.out.print("Cannot find " + inpt3);
-            System.out.print("\nPlease try again!\n");
+            System.out.print("\t\t\t\t\t\tCannot find " + inpt3);
+            System.out.print("\n\t\t\t\t\t\tPlease try again!\n");
             Search_Visa();
          }
       } catch (Exception exeException) {

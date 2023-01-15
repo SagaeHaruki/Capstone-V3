@@ -1,5 +1,3 @@
-import java.security.AllPermission;
-
 public class PsPHandler {
    /* This Class is used for Handling the Setters and Getters */
 
